@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VIT Block Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 3;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .info-card-header {
+            background: #1a237e;
+            padding: 1rem;
+            color: white;
+        }
+
+        .info-card-content {
+            padding: 1.5rem;
+        }
+
+        .highlight-box {
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.2rem;
+            }
+
+            .hero-section {
+                height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="mgr_block_vit[1].webp" alt="[Block Name]" class="hero-image">
+        <div class="hero-overlay">
+            <a href="AB.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Blocks
+            </a>
+            <h1 class="hero-title"></h1>
+            <p class="hero-description">The Dr.M.G.R. Block is the heart and soul of VIT. It includes the Chancellor’s Office, Admissions Office, Finance Office, the Director of Student Welfare Office and the International Relations Office which guide the students in their academic journey at VIT. Apart from these, it consists of well-equipped classrooms and well-designed labs providing the best facilities to students. One would also see the Dr. M Chenna Reddy Auditorium ( Capacity-469, Area-4885 sq. ft), and the Rajaji Hall (Capactiy-120, 1283 sq. ft. ) in the Main Building which are used for grand scale events and discussions. The garden which is located at the centre adds aesthetic value and helps to keep the atmosphere green and clean. The statue of ‘’Bharat Ratna’’ Dr. MGR unveiled by Mr. Venkatraman, the Former President of India on 7th September 1998, earns the building, its name – Dr. MGR Block. Since then this building has been the central to all VITians. The Mail Building consists of 5 floors (Basement to Third Floor).</p>
+        </div>
+    </section>
+
+    <div class="main-content">
+        <!-- Overview Section -->
+        <div class="info-card">
+            <div class="info-card-header">
+                <h2><i class="fas fa-info-circle"></i> Overview</h2>
+            </div>
+            <div class="info-card-content">
+                <p>The Dr.M.G.R. Block is the heart and soul of VIT. It includes the Chancellor’s Office, Admissions Office, Finance Office, the Director of Student Welfare Office and the International Relations Office which guide the students in their academic journey at VIT.</p>
+                
+                <div class="highlight-box">
+                    <h3>Quick Facts</h3>
+                    <ul>
+                        <li>Year Established: sep 7 , 1998</li>
+                        <li>Number of Floors: 5</li>
+                        <li>Capacity: 22000</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="info-card">
+            <div class="info-card-header">
+                <h2><i class="fas fa-images"></i> Gallery</h2>
+            </div>
+            <div class="info-card-content">
+                <div class="image-gallery">
+                    <img src="MGR1.jpg" alt="Interior 1" class="gallery-image">
+                    <img src="MGR2.jpg" alt="Interior 2" class="gallery-image">
+                   
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="info-card">
+            <div class="info-card-header">
+                <h2><i class="fas fa-address-card"></i> Contact Information</h2>
+            </div>
+            <div class="info-card-content">
+                <div class="contact-info">
+                    <i class="fas fa-user"></i>
+                    <span>Block Coordinator: Dr.Thirumalaivsan R</span>
+                </div>
+                
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span>asstdean.acad1@vit.ac.in</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VIT Hostels</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hostel-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            background-image: url(hero.jpg);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            color: #45489a;
+            font-size: larger;
+            font-weight: bolder;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #1a237e;
+        }
+
+        .hostel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .hostel-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .hostel-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hostel-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .hostel-info {
+            padding: 1.5rem;
+        }
+
+        .facilities-list {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .facility-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        .hostel-section {
+            padding: 40px 0;
+            background: #f5f5f5;
+        }
+
+        .hostel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hostel-title {
+            text-align: center;
+            color: #1a237e;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .hostel-block {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .hostel-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hostel-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .hostel-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .hostel-image:hover {
+            transform: scale(1.05);
+        }
+
+        .hostel-info {
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .hostel-info h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .facility-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .facility-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hostel-images {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title"></h1>
+            <p></p>
+        </div>
+    </section>
+
+    <div class="main-content">
+        <!-- Overview Section -->
+        <div class="info-card">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-users feature-icon"></i>
+                    <div>
+                        <h3>Diverse Community</h3>
+                        <p>Connect with a diverse population of people from various backgrounds</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-comments feature-icon"></i>
+                    <div>
+                        <h3>Social Development</h3>
+                        <p>Develop stronger interpersonal and communication skills</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-star feature-icon"></i>
+                    <div>
+                        <h3>Leadership</h3>
+                        <p>Engage in campus leadership, organizations and activities</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-handshake feature-icon"></i>
+                    <div>
+                        <h3>Community</h3>
+                        <p>Establish relationship with faculty and staff members</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Facilities Section -->
+        <h2>Hostel Facilities</h2>
+        <div class="facilities-list">
+            <div class="facility-item">
+                <i class="fas fa-snowflake"></i>
+                <p>Air-Conditioned and Non-AC single and shared bed options</p>
+            </div>
+            <div class="facility-item">
+                <i class="fas fa-bed"></i>
+                <p>Rooms equipped with ergonomically designed furniture including cot, chair, study table, study lamp, bookshelf and cupboard</p>
+            </div>
+            <div class="facility-item">
+                <i class="fas fa-dumbbell"></i>
+                <p>Best of amenities are provided to the students including well-equipped air-conditioned gymnasium, indoor and outdoor sports facilities</p>
+            </div>
+            <div class="facility-item">
+                <i class="fas fa-wifi"></i>
+                <p>24/7 Internet, food court, ATM, laundry service, medical center and other facilities within the hostel premises</p>
+            </div>
+        </div>
+
+        <!-- Hostel Blocks -->
+        <h2>Our Hostel Blocks</h2>
+        <div class="hostel-grid">
+            <div class="hostel-card">
+                <img src="mens-hostel.jpg" alt="Men's Hostel" class="hostel-image">
+                <div class="hostel-info">
+                    <h3>Men's Hostel</h3>
+                    <p>Modern amenities with comfortable living spaces for male students</p>
+                </div>
+            </div>
+            <div class="hostel-card">
+                <img src="womens-hostel.jpg" alt="Women's Hostel" class="hostel-image">
+                <div class="hostel-info">
+                    <h3>Women's Hostel</h3>
+                    <p>Safe and secure accommodation for female students</p>
+                </div>
+            </div>
+            <div class="hostel-card">
+                <img src="international.jpg" alt="International Block" class="hostel-image">
+                <div class="hostel-info">
+                    <h3>International Block</h3>
+                    <p>Specially designed for international students</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hostel-section">
+        <div class="hostel-container">
+            <h1 class="hostel-title">VIT Hostel Blocks</h1>
+
+            <!-- Men's Hostel Block -->
+            <div class="hostel-block">
+                <div class="hostel-content">
+                    <div class="hostel-info">
+                        <h3>Men's Hostel</h3>
+                        <p>State-of-the-art accommodation facilities for male students with modern amenities and comfortable living spaces.</p>
+                    </div>
+                    <div class="hostel-images">
+                        <img src="mens-block-A.webp" alt="Men's Block A" class="hostel-image">
+                        <img src="mens-block-B.jpg" alt="Men's Block Common Area" class="hostel-image">
+                        <img src="mens-block-C.jpg" alt="Men's Block Room" class="hostel-image">
+                    </div>
+                    <div class="hostel-info">
+                        <h4>Facilities Include:</h4>
+                        <ul class="facility-list">
+                            <li class="facility-item">24/7 Wi-Fi Connectivity</li>
+                            <li class="facility-item">Modern Gym Facilities</li>
+                            <li class="facility-item">Reading Room</li>
+                            <li class="facility-item">Indoor Games Room</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Women's Hostel Block -->
+            <div class="hostel-block">
+                <div class="hostel-content">
+                    <div class="hostel-info">
+                        <h3>Women's Hostel</h3>
+                        <p>Secure and comfortable accommodation for female students with dedicated facilities and round-the-clock security.</p>
+                    </div>
+                    <div class="hostel-images">
+                        <img src="womens-block-A.webp" alt="Women's Block A" class="hostel-image">
+                        <img src="womens-block-B.jpg" alt="Women's Block Common Area" class="hostel-image">
+                        <img src="womens-block-C.jpg" alt="Women's Block Room" class="hostel-image">
+                    </div>
+                    <div class="hostel-info">
+                        <h4>Facilities Include:</h4>
+                        <ul class="facility-list">
+                            <li class="facility-item">24/7 Security</li>
+                            <li class="facility-item">Fitness Center</li>
+                            <li class="facility-item">Study Areas</li>
+                            <li class="facility-item">Recreation Room</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- International Hostel Block -->
+           <!--<div class="hostel-block">
+                <div class="hostel-content">
+                    <div class="hostel-info">
+                        <h3>International Block</h3>
+                        <p>Premium accommodation designed specifically for international students with enhanced amenities and multicultural environment.</p>
+                    </div>
+                    <div class="hostel-images">
+                        <img src="international-block-A.jpg" alt="International Block A" class="hostel-image">
+                        <img src="international-block-B.jpg" alt="International Block Common Area" class="hostel-image">
+                        <img src="international-block-C.jpg" alt="International Block Room" class="hostel-image">
+                    </div>
+                    <div class="hostel-info">
+                        <h4>Facilities Include:</h4>
+                        <ul class="facility-list">
+                            <li class="facility-item">Air Conditioning</li>
+                            <li class="facility-item">Private Bathrooms</li>
+                            <li class="facility-item">International Food Court</li>
+                            <li class="facility-item">Cultural Activity Center</li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+</body>
+</html>

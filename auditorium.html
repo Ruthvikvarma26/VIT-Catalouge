@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VIT Auditoriums & Conference Facilities</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 80vh;
+            background: linear-gradient(rgba(0,33,71,0.8), rgba(0,33,71,0.9)), url('anna-audi.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #ffd700;
+        }
+
+        .auditorium-section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #002147;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #ffd700;
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .auditorium-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            padding: 0 2rem;
+        }
+
+        .auditorium-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .auditorium-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .card-image-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .auditorium-card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .capacity-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0,33,71,0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: #002147;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            padding: 0.5rem;
+            background: #f8f9fa;
+            border-radius: 6px;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(5px);
+            background: #e9ecef;
+        }
+
+        .feature-icon {
+            color: #002147;
+        }
+
+        .gallery-section {
+            background: #002147;
+            padding: 4rem 2rem;
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 1rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .auditorium-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            color: #002147;
+            font-weight: 500;
+        }
+
+        .home-button:hover {
+            background: #002147;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .home-icon {
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .home-button {
+                top: 10px;
+                left: 10px;
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Parallax -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">World-Class Auditoriums</h1>
+            <p class="hero-subtitle">Experience excellence in our state-of-the-art conference facilities designed for knowledge sharing and cultural enrichment</p>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div>Auditoriums</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3000+</div>
+                    <div>Total Capacity</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div>Events Yearly</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="auditorium-grid">
+        <!-- Anna Audi -->
+        <div class="auditorium-card">
+            <img src="anna-audi.jpg" alt="Anna Auditorium" class="auditorium-image">
+            <div class="auditorium-info">
+                <h2 class="auditorium-title">Anna Auditorium</h2>
+                <div class="capacity-badge">Seating Capacity: 1800</div>
+               <!--<p>Commonly used by students, this marvel spans 15436 sq. feet with centralized air conditioning, Wi-Fi service, and a spectacular stage along with green rooms.</p>--> 
+                <ul class="features-list">
+                    <li class="feature-item">✓ Centralized Air Conditioning</li>
+                    <li class="feature-item">✓ Wi-Fi Service</li>
+                    <li class="feature-item">✓ Spectacular Stage</li>
+                    <li class="feature-item">✓ Green Rooms</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dr. M. Channa Reddy Auditorium -->
+        <div class="auditorium-card">
+            <img src="channa-reddy.jpg" alt="Dr. M. Channa Reddy Auditorium" class="auditorium-image" style="width: 400px; height: 260px;">
+            <div class="auditorium-info">
+                <h2 class="auditorium-title">Dr. M. Channa Reddy Auditorium</h2>
+                <div class="capacity-badge">Seating Capacity: 469</div>
+                <ul class="features-list">
+                    <li class="feature-item">✓ Modern Audio System</li>
+                    <li class="feature-item">✓ Professional Lighting</li>
+                    <li class="feature-item">✓ Comfortable Seating</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dr. Ambedkar Auditorium -->
+        <div class="auditorium-card">
+            <img src="ambedkar.jpg" alt="Dr. Ambedkar Auditorium" class="auditorium-image" style="width: 400px; height: 260px;">
+            <div class="auditorium-info">
+                <h2 class="auditorium-title">Dr. Ambedkar Auditorium</h2>
+                <div class="capacity-badge">Seating Capacity: 198</div>
+                <ul class="features-list">
+                    <li class="feature-item">✓ Intimate Setting</li>
+                    <li class="feature-item">✓ Advanced Presentation Equipment</li>
+                    <li class="feature-item">✓ Perfect for Seminars</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Kamaraj Auditorium -->
+        <div class="auditorium-card">
+            <img src="kamaraj.jpg" alt="Kamaraj Auditorium" class="auditorium-image" style="width: 400px; height: 260px;">
+            <div class="auditorium-info">
+                <h2 class="auditorium-title">Kamaraj Auditorium</h2>
+                <div class="capacity-badge">Seating Capacity: 128</div>
+                <ul class="features-list">
+                    <li class="feature-item">✓ Conference Setup</li>
+                    <li class="feature-item">✓ Modern Facilities</li>
+                    <li class="feature-item">✓ Ideal for Small Events</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Era Sezhiyan Auditorium -->
+        <div class="auditorium-card">
+            <img src="sezhiyan.jpg" alt="Era Sezhiyan Auditorium" class="auditorium-image" style="width: 400px; height: 260px;">
+            <div class="auditorium-info">
+                <h2 class="auditorium-title">Era Sezhiyan Auditorium</h2>
+                <div class="capacity-badge">Seating Capacity: 462</div>
+                
+                <ul class="features-list">
+                    <li class="feature-item">✓ State-of-the-art Facilities</li>
+                    <li class="feature-item">✓ Modern Design</li>
+                    <li class="feature-item">✓ Excellent Acoustics</li>
+                </ul>
+            </div>
+        </div> 
+    </div>
+    <a href="index.html" class="home-button">
+        <i class="fas fa-home home-icon"></i>
+        <span>Home</span>
+    </a>
+</body>
+</html>
